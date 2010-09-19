@@ -4,5 +4,13 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /_ah/mail/.+ 
+  script: handle_incoming_email.py 
 - url: .*
   script: main.py
+
+#  login: admin
+
+inbound_services:
+- mail
+
